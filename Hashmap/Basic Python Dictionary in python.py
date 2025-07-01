@@ -1,25 +1,18 @@
-# Creating a hashmap (dictionary)
-hashmap = {
-    "apple": 3,
-    "banana": 5,
-    "orange": 2
-}
+text = "apple banana apple orange banana apple"
 
-# Accessing a value
-print(hashmap["apple"])  # Output: 3
+#initialize empty hashmap 
+word_count = {}
 
-# Adding or updating a key-value pair
-hashmap["grape"] = 10
-hashmap["banana"] = 6
-hashmap["lichi"] = 4
+# Split text into words and count frequencies
+for word in text.split():
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
 
-# Deleting a key-value pair
-del hashmap["orange"]
+# print the word frequencies
+print(word_count)
 
-# Checking if a key exists
-if "apple" in hashmap:
-    print("Apple exists.")
-
-# Iterating through the hashmap
-for key, value in hashmap.items():
-    print(f"{key}: {value}")
+# iterating through the hashmap
+for key, value in word_count.items():
+     print(f"{key} : {value}")
